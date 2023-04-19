@@ -32,6 +32,9 @@ while checkNo:
     if num > length:
         print(f"Password can only have at most {length} numeric characters.\n")
         continue
+    if num < 0:
+        print(f"Input cannot be a negative number.\n")
+        continue
     else:
         checkNo = False
     if num == length:
@@ -45,6 +48,9 @@ while checkSpec and length - num != 0:
     if spec > length - num:
         print(f"Password can now have at most {length - num} special characters.\n")
         continue
+    if spec < 0:
+        print(f"Input cannot be a negative number.\n")
+        continue
     else:
         checkSpec = False
     if spec == length - num:
@@ -56,6 +62,9 @@ while checkCap and length - num - spec != 0:
     cap = int(input("\nEnter the total number of alphabetic characters that must be in capital.\n"))
     if cap > length - num - spec:
         print(f"Password can have at most {length - num - spec} capital alphabetic characters.\n")
+        continue
+    if cap < 0:
+        print(f"Input cannot be a negative number.\n")
         continue
     else:
         checkCap = False
